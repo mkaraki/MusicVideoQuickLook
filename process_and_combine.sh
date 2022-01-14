@@ -30,11 +30,10 @@ while read row; do
 
     echo "file '$outputfile'" >> $tempfile
 
-    #./gen_feded_video_with_text.sh "$startsec" "$endsec" "$title" "$information1" "$information2" "$inputfile" "$outputfile"
+    ./gen_feded_video_with_text.sh "$startsec" "$endsec" "$title" "$information1" "$information2" "$inputfile" "$outputfile"
 
 done < $videolist
 
 ffmpeg -f concat -safe 0 -i $tempfile $combined_output
-
 
 rm $tempfile
