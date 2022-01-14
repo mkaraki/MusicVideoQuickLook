@@ -15,7 +15,7 @@ while read row; do
     startsec=`echo ${row} | cut -d , -f 5`
     endsec=`echo ${row} | cut -d , -f 6`
 
-    outputfile=$inputfile.faded.$ext
+    outputfile=$inputfile.feded.$ext
 
     ./gen_feded_video_with_text.sh "$startsec" "$endsec" "$title" "$information1" "$information2" "$inputfile" "$outputfile"
 
