@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <video list>"
+    exit 1
+fi
+
 while read row; do
     inputfile=`echo ${row} | cut -d , -f 1`
     if [[ "$inputfile" == "Input" ]]; then
