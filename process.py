@@ -6,13 +6,6 @@ import gen_feded_video_with_text
 
 
 class ClipInfo:
-    def __init__(self):
-        self.input = ''
-        self.start = 0
-        self.end = 0
-        self.title = ''
-        self.infos = []
-
     def __init__(self, infile, start, end, title, infos):
         self.input = infile
 
