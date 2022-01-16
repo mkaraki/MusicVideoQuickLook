@@ -5,7 +5,23 @@ import gen_feded_video_with_text
 
 
 class ClipInfo:
+
     def __init__(self, infile: str, start: int, end: int, title: str, infos: list):
+        """Create clip info
+
+        Create clip info to use batch processing.
+
+        Args:
+            infile (str): Input file
+            start (int): Clip start time
+            end (int): Clip end time
+            title (str): Title
+            infos (list): Additional infos
+
+        Returns:
+            ClipInfo: Clip info
+
+        """
         self.input = infile
 
         _, ext = os.path.splitext(infile)
