@@ -2,7 +2,6 @@ import ffmpeg
 import sys
 import os
 import csv
-import gen_feded_video_with_text
 import process
 
 
