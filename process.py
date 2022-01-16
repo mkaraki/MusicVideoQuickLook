@@ -1,4 +1,3 @@
-import ffmpeg
 import sys
 import os
 import csv
