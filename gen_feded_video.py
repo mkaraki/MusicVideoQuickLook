@@ -3,10 +3,12 @@ import sys
 
 
 def genvid(input, output, start, end, options={}):
-    input = ffmpeg.input(input, ss=start, to=end)
+    instream = ffmpeg.input(input, ss=start, to=end)
 
-    audio = fade_ffmpeg_audio_stream(input.audio, start, end - start, options)
-    video = fade_ffmpeg_video_stream(input.video, start, end - start, options)
+    audio = fade_ffmpeg_audio_stream(
+        instream.audio, start, end - start, options)
+    video = fade_ffmpeg_video_stream(
+        instream.video, start, end - start, options)
 
     proc = ffmpeg.output(video, audio, output)
 

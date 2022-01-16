@@ -3,7 +3,7 @@ import sys
 import gen_feded_video
 
 
-def gentxtvid(input, output, start, end, title, infos=[], options={}):
+def gentxtvid(instream, output, start, end, title, infos=[], options={}):
     if ('font' not in options):
         options['font'] = ''
     if ('bgcolor' not in options):
@@ -13,8 +13,8 @@ def gentxtvid(input, output, start, end, title, infos=[], options={}):
     if ('infotime' not in options):
         options['infotime'] = 8
 
-    input = ffmpeg.input(input, ss=start, to=end)
-    video = input.video
+    instream = ffmpeg.input(instream, ss=start, to=end)
+    video = instream.video
 
     # Write BG Box
     video = video.drawbox(x=0, y='ih-150', width='iw', height=150,
@@ -39,7 +39,7 @@ def gentxtvid(input, output, start, end, title, infos=[], options={}):
     video = gen_feded_video.fade_ffmpeg_video_stream(
         video, start, end - start, options)
     audio = gen_feded_video.fade_ffmpeg_audio_stream(
-        input.audio, start, end - start, options)
+        instream.audio, start, end - start, options)
 
     if ('return_stream' in options and options['return_stream']):
         return (video, audio)
