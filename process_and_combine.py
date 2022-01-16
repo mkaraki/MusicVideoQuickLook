@@ -24,9 +24,8 @@ if __name__ == "__main__":
 
     streams = process.process_videos(clips, {'return_stream': True})
 
-    print(streams)
-
     concat = ffmpeg.concat(*streams, v=1, a=1)
-    concat.output(sys.argv[2]).run()
+    output = concat.output(sys.argv[2])
+    output.run()
 
     exit
