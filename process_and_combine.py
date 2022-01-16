@@ -1,6 +1,5 @@
 import ffmpeg
 import sys
-import csv
 import process
 
 
