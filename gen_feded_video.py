@@ -2,8 +2,8 @@ import ffmpeg
 import sys
 
 
-def genvid(input, output, start, end, options={}):
-    instream = ffmpeg.input(input, ss=start, to=end)
+def genvid(instream, output, start, end, options={}):
+    instream = ffmpeg.input(instream, ss=start, to=end)
 
     audio = fade_ffmpeg_audio_stream(
         instream.audio, start, end - start, options)
