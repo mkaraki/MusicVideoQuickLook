@@ -2,7 +2,7 @@ import ffmpeg
 import sys
 
 
-def genvid(instream, output, start, end, options=None):
+def genvid(instream: str, output: str, start: int, end: int, options: dict = None):
     if (options == None):
         options = {}
 
@@ -18,7 +18,7 @@ def genvid(instream, output, start, end, options=None):
     ffmpeg.run(proc)
 
 
-def fade_ffmpeg_audio_stream(audio, start, end, options=None):
+def fade_ffmpeg_audio_stream(audio, start: int, end: int, options: dict = None):
     if (options == None):
         options = {}
 
@@ -32,7 +32,7 @@ def fade_ffmpeg_audio_stream(audio, start, end, options=None):
     return (audio)
 
 
-def fade_ffmpeg_video_stream(video, start, end, options=None):
+def fade_ffmpeg_video_stream(video, start: int, end: int, options: dict = None):
     if (options == None):
         options = {}
 

@@ -3,7 +3,7 @@ import sys
 import gen_feded_video
 
 
-def gentxtvid(instream, output, start, end, title, infos, options=None):
+def gentxtvid(instream, output: str, start: int, end: int, title: str, infos: list, options: dict = None):
     if (options == None):
         options = {}
 

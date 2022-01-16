@@ -5,7 +5,7 @@ import gen_feded_video_with_text
 
 
 class ClipInfo:
-    def __init__(self, infile, start, end, title, infos):
+    def __init__(self, infile: str, start: int, end: int, title: str, infos: list):
         self.input = infile
 
         _, ext = os.path.splitext(infile)
@@ -17,7 +17,7 @@ class ClipInfo:
         self.infos = infos
 
 
-def process_videos(videos, options=None):
+def process_videos(videos: list, options=None):
     if (options == None):
         options = {}
 
