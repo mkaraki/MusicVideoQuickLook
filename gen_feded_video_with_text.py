@@ -3,7 +3,10 @@ import sys
 import gen_feded_video
 
 
-def gentxtvid(instream, output, start, end, title, infos=[], options={}):
+def gentxtvid(instream, output, start, end, title, infos, options=None):
+    if (options == None):
+        options = {}
+
     if ('font' not in options):
         options['font'] = ''
     if ('bgcolor' not in options):

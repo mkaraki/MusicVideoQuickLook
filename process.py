@@ -17,7 +17,10 @@ class ClipInfo:
         self.infos = infos
 
 
-def process_videos(videos, options={}):
+def process_videos(videos, options=None):
+    if (options == None):
+        options = {}
+
     outputs = []
     for video in videos:
         stream = gen_feded_video_with_text.gentxtvid(
