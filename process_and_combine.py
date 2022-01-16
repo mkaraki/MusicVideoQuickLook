@@ -25,5 +25,3 @@ if __name__ == "__main__":
     concat = ffmpeg.concat(*streams, v=1, a=1)
     output = concat.output(sys.argv[2])
     output.run()
-
-    exit

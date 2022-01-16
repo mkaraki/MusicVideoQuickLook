@@ -46,4 +46,3 @@ if __name__ == "__main__":
                          int(row[2]), row[3], row[4:]))
 
     process_videos(clips)
-    exit

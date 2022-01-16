@@ -57,4 +57,3 @@ if __name__ == "__main__":
         sys.exit(1)
     gentxtvid(sys.argv[1], sys.argv[2], int(sys.argv[3]),
               int(sys.argv[4]), sys.argv[5], sys.argv[6:])
-    exit

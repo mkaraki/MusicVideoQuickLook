@@ -42,4 +42,3 @@ if __name__ == "__main__":
         print("Usage: gen_feded_video_with_text.py <input> <output> <start> <end>")
         sys.exit(1)
     genvid(sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]))
-    exit
