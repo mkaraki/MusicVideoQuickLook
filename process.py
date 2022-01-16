@@ -48,11 +48,7 @@ def process_videos(videos: list, options=None):
     return outputs
 
 
-if __name__ == "__main__":
-    if len(sys.argv) < 1:
-        print("Usage: process_and_combine.py <input csv>")
-        sys.exit(1)
-
+def get_clips_from_csv(csvfile: list):
     clips = []
 
     with open(sys.argv[1], encoding='utf8', newline='') as f:
@@ -63,5 +59,15 @@ if __name__ == "__main__":
 
             clips.append(ClipInfo(row[0], int(row[1]),
                          int(row[2]), row[3], row[4:]))
+
+    return clips
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 1:
+        print("Usage: process_and_combine.py <input csv>")
+        sys.exit(1)
+
+    clips = get_clips_from_csv(sys.argv[1])
 
     process_videos(clips)

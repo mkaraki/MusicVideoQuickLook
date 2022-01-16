@@ -9,16 +9,7 @@ if __name__ == "__main__":
         print("Usage: process_and_combine.py <input csv> <output>")
         sys.exit(1)
 
-    clips = []
-
-    with open(sys.argv[1], encoding='utf8', newline='') as f:
-        csvreader = csv.reader(f)
-        for row in csvreader:
-            if (row[0] == 'Input'):
-                continue
-
-            clips.append(process.ClipInfo(row[0], int(row[1]),
-                         int(row[2]), row[3], row[4:]))
+    clips = process.get_clips_from_csv(sys.argv[1])
 
     streams = process.process_videos(clips, {'return_stream': True})
 
